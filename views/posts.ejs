@@ -21,7 +21,10 @@
                         </h3> 
                         <div>
                             <p class="comment"> <%= post.comment %> </p>
-                            <img class="like" src="like.png" />
+                            <div class= "like">
+                                <img class="likeImage" src="like.png" />
+                                    <span> <%= post.likes %> </span>
+                            </div>
                         </div> 
                     </div> 
                     <% }) %> 
