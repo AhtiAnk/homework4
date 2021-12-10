@@ -70,3 +70,8 @@
 p {
     font-family: fantasy;
 }
+
+a {
+    color:black;
+    text-decoration: none;
+}

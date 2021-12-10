@@ -24,6 +24,20 @@ app.get('/addnewpost', (req, res) => {
         res.render('addnewpost'); 
     })
 
+app.get('/singlepost/:id', async(req, res) => { 
+    try { 
+        const id = req.params.id; 
+        console.log(req.params.id); 
+        console.log("get a single post request has arrived"); 
+        const posts = await pool.query( 
+            "SELECT * FROM posts WHERE id = $1", [id] 
+        ); 
+        res.render('singlepost', { posts: posts.rows[0] }); 
+    } catch (err) { 
+        console.error(err.message); 
+    } 
+});   
+
 app.get('/', async(req, res) => { 
     try { 
         console.log("get posts request has arrived"); 
@@ -36,7 +50,6 @@ app.get('/', async(req, res) => {
     } 
 });
 
-<<<<<<< HEAD
 /*app.get('/:id', async(req, res) => {
     try {
     console.log("get a post request has arrived");
@@ -64,7 +77,6 @@ app.delete('/posts/:id', async(req, res) => {
     }
    });
    
-=======
 app.post('/', async(req, res) => { 
     try { 
         const post = req.body; 
@@ -78,4 +90,3 @@ app.post('/', async(req, res) => {
         console.error(err.message) 
     } 
 }); 
->>>>>>> 54e38943bde37afbe1670ded1117d653fd7c4c62

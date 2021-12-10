@@ -7,16 +7,16 @@
 </head>
 <body>
     <div class="vertical"> 
-        <%if (posts.id = )%>
+        
         <div class="container"> 
-            <div class="singlepost" href="/singlepost/<%= post.id %>"> 
+            <div class="singlepost" > 
                 <h3 class="title">
-                    <img src="profile.png" alt="Profile" /> 
-                    <span> <%= post.time %> </span> 
+                    <img src="/profile.png" alt="Profile" /> 
+                    <span> <%= posts.time %> </span> 
                 </h3> 
                 <div>
-                    <p class="comment"> <%= post.comment %> </p>
-                    <img class="like" src="like.png" />
+                    <p class="comment"> <%= posts.comment %> </p>
+                    <img class="like" src="/like.png" />
                 </div> 
             </div>
         </div>                

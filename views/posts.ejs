@@ -13,20 +13,21 @@
      
                 <% if (posts.length > 0) { %> 
                     <% posts.forEach(post => { %> 
-     
-                    <div class="singlepost" href="/singlepost/<%= post.id %>"> 
-                        <h3 class="title">
-                            <img src="profile.png" alt="Profile" /> 
-                            <span> <%= post.time %> </span> 
-                        </h3> 
-                        <div>
-                            <p class="comment"> <%= post.comment %> </p>
-                            <div class= "like">
-                                <img class="likeImage" src="like.png" />
-                                    <span> <%= post.likes %> </span>
-                            </div>
-                        </div> 
-                    </div> 
+                    <a href="/singlepost/<%= post.id %>">
+                        <div class="singlepost"> 
+                            <h3 class="title">
+                                <img src="profile.png" alt="Profile" /> 
+                                <span> <%= post.time %> </span> 
+                            </h3> 
+                            <div>
+                                <p class="comment"> <%= post.comment %> </p>
+                                <div class= >
+                                    <img class="likeImage" src="like.png" />
+                                       <span> <%= post.likes %> </span>
+                                </div>
+                            </div> 
+                        </div>
+                    </a> 
                     <% }) %> 
                 <% } else { %> 
                     <p>You did not post anything.</p> 
