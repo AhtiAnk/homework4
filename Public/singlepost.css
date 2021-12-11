@@ -1,11 +1,25 @@
-.vertical {
+.singlepost {
     height: fit-content;
     position: absolute;
-    left: 25%;
-    right: 25%;
+    left: 38%;
+    right: 38%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+    margin: 10px;
+    box-shadow: 2px 2px 5px 5px rgb(148, 148, 148);
+    background-color: #ffffff;
+}
+
+.pic {
+    height: 300px;
+    width: 300px;
+    float: left;
 }
 
 .like {
@@ -17,7 +31,4 @@
 .comment {
     text-align: left;
     padding-left: 5px;
-}
-p {
-    font-family: fantasy;
 }

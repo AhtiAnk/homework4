@@ -50,20 +50,8 @@ app.get('/', async(req, res) => {
     } 
 });
 
-/*app.get('/:id', async(req, res) => {
-    try {
-    console.log("get a post request has arrived");
-    const posts = await pool.query(
-    "SELECT * FROM posts WHERE id = $1", [id]
-    );
-    res.render('posts', { posts: posts.rows });
-    res.json(posts.rows);
-    } catch (err) {
-    onsole.error(err.message);
-    }
-   });*/
 
-app.delete('/posts/:id', async(req, res) => {
+app.delete('/:id', async(req, res) => {
     try {
     const { id } = req.params;
     const post = req.body;
@@ -71,7 +59,7 @@ app.delete('/posts/:id', async(req, res) => {
     const deletepost = await pool.query(    
     "DELETE FROM posts WHERE id = $1", [id]
     );
-    res.json(post);
+    res.redirect('posts');
     } catch (err) {
     console.error(err.message);
     }
@@ -90,3 +78,6 @@ app.post('/', async(req, res) => {
         console.error(err.message) 
     } 
 }); 
+app.get('*', function(req, res){
+    res.send('Webpage does not exist!', 404);
+});
