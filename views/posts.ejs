@@ -22,11 +22,11 @@
                             </h3> 
                             <div>
                                 <p class="comment"> <%= post.comment %> </p>
-                                <div class= like >
+                                <div class= like>
                                     <form action="/" method="POST" >
                                         <input type="hidden" name="id" value="<%= post.id %>" required>
                                         <input type="hidden" name="likes" value="<%= post.likes %>" required>
-                                        <button></button> 
+                                        <button class="likebutton"></button> 
                                     </form> 
                                     <span> <%= post.likes %> </span>
                                 </div>

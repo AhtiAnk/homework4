@@ -74,7 +74,7 @@ body{
     width: 40px;
 } */
 
-button {
+.likebutton {
     background-color: transparent;
     background-image: url('/like.png');
     background-size:cover;
