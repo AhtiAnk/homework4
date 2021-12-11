@@ -7,6 +7,7 @@
     <title>Posts</title>
 </head>
 <body> 
+    
     <%- include('./partials/header.ejs') %> 
         <div class="vertical"> 
             <div class="container"> 
@@ -16,14 +17,18 @@
                     <a href="/singlepost/<%= post.id %>">
                         <div class="singlepost"> 
                             <h3 class="title">
-                                <img src="profile.png" alt="Profile" /> 
+                                <img src="profile.png" alt="Profsile" /> 
                                 <span> <%= post.time %> </span> 
                             </h3> 
                             <div>
                                 <p class="comment"> <%= post.comment %> </p>
-                                <div class= >
-                                    <img class="likeImage" src="like.png" />
-                                       <span> <%= post.likes %> </span>
+                                <div class= like >
+                                    <form action="/" method="POST" >
+                                        <input type="hidden" name="id" value="<%= post.id %>" required>
+                                        <input type="hidden" name="likes" value="<%= post.likes %>" required>
+                                        <button></button> 
+                                    </form> 
+                                    <span> <%= post.likes %> </span>
                                 </div>
                             </div> 
                         </div>
@@ -33,8 +38,12 @@
                     <p>You did not post anything.</p> 
                     <% } %> 
             </div>                
+<<<<<<< HEAD
             <%- include('./partials/footer.ejs') %> 
         </div> 
+=======
+        </div>
+>>>>>>> e0ca023e595de89b2c0ab75fc26378bf45cf2f68
      
     
 </body>

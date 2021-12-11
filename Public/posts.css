@@ -34,7 +34,6 @@ body{
     height: auto;
     margin: 10px;
     box-shadow: 2px 2px 5px 5px rgb(148, 148, 148);
-    /* border: 3px rgb(10, 10, 10) solid; */
     background-color: #ffffff;
 }
 
@@ -61,12 +60,6 @@ body{
     max-height: 300px;
     width: 400px;
 } */
-.likeImage {
-    height: 30px;
-    width: 40px;
-    float: left;
-    vertical-align: middle;
-}
 .comment {
     text-align: left;
     padding-left: 5px;
@@ -75,6 +68,21 @@ body{
     display: flex;
     align-items: center;
 }
+
+/* .likeImage {
+    height: 30px;
+    width: 40px;
+} */
+
+button {
+    background-color: transparent;
+    background-image: url('/like.png');
+    background-size:cover;
+    border: none;
+    height: 30px;
+    width: 40px;
+}
+
 p {
     font-family: fantasy;
 }
