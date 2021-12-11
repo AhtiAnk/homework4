@@ -8,23 +8,25 @@
     <%- include('./partials/header.ejs') %> 
 </head>
 <body>
-    
-    <div class="vertical"> 
-        
-        <div class="container"> 
-            <div class="singlepost" > 
-                <h3 class="title">
-                    <img src="/profile.png" alt="Profile" /> 
-                    <span> <%= posts.time %> </span> 
-                </h3> 
-                <div>
-                    <p class="comment"> <%= posts.comment %> </p>
-                    <img class="like" src="/like.png" />
-                </div> 
+    <%- include('./partials/header.ejs') %> 
+    <div class="singlepost" > 
+        <div>
+            <p class="comment"> <%= posts.comment %> </p>
+            <img class = "pic" src="/profile.png" alt="Profile" />
+            <div>
+                <img class="like" src="/like.png" />
+                <p class="likes"><%= posts.likes %> </p>
             </div>
-        </div>                
-    <%- include('./partials/footer.ejs') %>
-    </div> 
-    
+            
+            <form method="POST" action="/<%= posts.id %>?_method=DELETE">
+                <input type="hidden" name="_method" value="delete">
+               <button type="submit">
+                <a class="btn-floating btn-small waves-effect waves-light red">
+                    <i>Delete</i></a>
+               </button> 
+            </form>
+        </div> 
+    </div>
+    <%- include('./partials/footer.ejs') %> 
 </body>
 </html>
