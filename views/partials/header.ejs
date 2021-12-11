@@ -1,0 +1,124 @@
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="postIt">
+    </div>
+    <div class="searchBox">
+        <input type="text"><button>Search</button>
+    </div>
+    <nav>
+      <a href="/">Home </a> |
+      <a href="/posts">Posts page</a> |
+      <a href="/contactus">Contact us</a>|
+      <a href="/addnewpost">New post</a>
+      <div class="dropdown">
+          <div class="menüü">
+            <button><img src="profile.png"></a></button>
+            <ul>
+              <li><a href="#">Kermo Kase</a></li>
+              <li><a href="#">Kermo.Kase@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    
+    
+    
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+  header {
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+    z-index: 1;
+}
+
+header div{ 
+    height: 30px;
+    padding: 5px;  
+}
+
+header div img {
+    height: 25px;
+    width: 25px;
+}
+
+header div.logo{
+    flex-grow: 2;
+}
+
+header div.profile{
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+div.searchBox{
+    flex-grow: 2;
+}
+div.searchBox > input{
+    padding: 5px;
+    width: 400px;
+}
+
+div.searchBox > button{
+    background-color: #222494;
+    color: #ffffff;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    border-color: #222494;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    cursor: pointer;
+}
+div.searchBox button:hover{
+    background-color: white;
+    color: red;
+}
+.menüü {
+    position: relative;
+    
+  }
+  .menüü ul {
+    margin-top: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    height: 100px;
+    background: white;
+    right: 0px;
+    list-style: none;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+  .menüü li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+  }
+  .menüü a {
+    color: black;
+    text-decoration: none;
+    font-size: small;
+    
+  }
+  
+  .dropdown button {
+  
+    cursor: pointer;
+  }
+  .menüü button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+  }
+      </style>    
+</header>

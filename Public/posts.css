@@ -1,8 +1,16 @@
+body{
+    margin: 0;
+    background: linear-gradient(to right, #044ae0, #2fd4da)
+    
+}
+
+
 .vertical {
     height: fit-content;
     position: absolute;
     left: 25%;
     right: 25%;
+    background-color: #ffffff;
 }
 
 .container {
