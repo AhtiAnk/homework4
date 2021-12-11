@@ -5,28 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/singlepost.css">
     <title>Single post</title>
-    <%- include('./partials/header.ejs') %> 
 </head>
 <body>
-    <%- include('./partials/header.ejs') %> 
-    <div class="singlepost" > 
-        <div>
-            <p class="comment"> <%= posts.comment %> </p>
-            <img class = "pic" src="/profile.png" alt="Profile" />
-            <div>
-                <img class="like" src="/like.png" />
-                <p class="likes"><%= posts.likes %> </p>
+    <%- include('./partials/header.ejs') %>
+    <div class="vertical">
+        <div class= "container" >
+            <div class="singlepost" > 
+                    <h3>
+                        <img class = "pic" src="/profile.png" alt="Profile" />
+                        <span> <%= posts.time %> </span>
+                    </h3>
+                    <div> 
+                        <p class="comment"> <%= posts.comment %> </p> 
+                        <div class="likebox">
+                            <img class="like" src="/like.png" />
+                            <span class="likes"><%= posts.likes %> </span>
+                        </div>
+                    </div>
+                    
+                    <form class="deleteform" method="POST" action="/<%= posts.id %>?_method=DELETE">
+                        <input type="hidden" name="_method" value="delete">
+                    <button type="submit">
+                        <a class="btn-floating btn-small waves-effect waves-light red">
+                            <i>Delete</i></a>
+                    </button> 
+                    </form> 
             </div>
-            
-            <form method="POST" action="/<%= posts.id %>?_method=DELETE">
-                <input type="hidden" name="_method" value="delete">
-               <button type="submit">
-                <a class="btn-floating btn-small waves-effect waves-light red">
-                    <i>Delete</i></a>
-               </button> 
-            </form>
-        </div> 
+        </div>
+        <%- include('./partials/footer.ejs') %> 
     </div>
-    <%- include('./partials/footer.ejs') %> 
 </body>
 </html>
