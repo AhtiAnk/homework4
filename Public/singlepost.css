@@ -20,15 +20,28 @@
     height: 300px;
     width: 300px;
     float: left;
+    background-color: #ffffff;
 }
 
 .like {
     height: 30px;
-    width: 40px;
+    width: 30px;
     float: left;
 }
 
 .comment {
     text-align: left;
     padding-left: 5px;
+<<<<<<< HEAD
+=======
+}
+p {
+    font-family: fantasy;
+}
+
+.singlepost img {
+    height: 30px;
+    width: 30px;
+    float: left;
+>>>>>>> eaf16fc07ee70ac4bdd609094d5578ea22e73133
 }
