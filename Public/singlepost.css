@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 2px 2px 5px 5px rgb(148, 148, 148);
+    background-color: #ffffff;
 
     display: flex;
     flex-direction: column;
@@ -32,16 +34,8 @@
 .comment {
     text-align: left;
     padding-left: 5px;
-<<<<<<< HEAD
-=======
 }
 p {
     font-family: fantasy;
 }
 
-.singlepost img {
-    height: 30px;
-    width: 30px;
-    float: left;
->>>>>>> eaf16fc07ee70ac4bdd609094d5578ea22e73133
-}
