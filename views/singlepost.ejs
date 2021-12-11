@@ -16,7 +16,14 @@
                 <img class="like" src="/like.png" />
                 <p class="likes"><%= posts.likes %> </p>
             </div>
-            <button> Delete </button>
+            
+            <form method="POST" action="/<%= posts.id %>?_method=DELETE">
+                <input type="hidden" name="_method" value="delete">
+               <button type="submit">
+                <a class="btn-floating btn-small waves-effect waves-light red">
+                    <i>Delete</i></a>
+               </button> 
+            </form>
         </div> 
     </div>
     <%- include('./partials/footer.ejs') %> 

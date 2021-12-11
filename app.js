@@ -2,20 +2,17 @@ const express = require('express');
 const pool = require('./database'); 
 const cors = require('cors');
 const { identity } = require('lodash');
+const methodOverride = require("method-override");
  
 const app = express(); 
  
 app.set('view engine', 'ejs'); 
  
+app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors()); 
 app.use(express.static('Public'));
-
-/*  1.4?
-    app.get('*', function(req, res){
-    res.send('what???', 404);
-  });*/
  
 app.listen(3000, () => { 
     console.log("Server is listening to port 3000") 
@@ -33,7 +30,7 @@ app.get('/singlepost/:id', async(req, res) => {
         const posts = await pool.query( 
             "SELECT * FROM posts WHERE id = $1", [id] 
         ); 
-        res.render('singlepost', { posts: posts.rows[0] }); 
+        res.render('singlepost', { posts: posts.rows[0]}); 
     } catch (err) { 
         console.error(err.message); 
     } 
@@ -54,12 +51,13 @@ app.get('/', async(req, res) => {
 
 app.delete('/:id', async(req, res) => {
     try {
+        const id = req.params.id; 
     const post = req.body;
-    console.log("delete a post request has arrived");
+    console.log("delete a post request has arrived with id "+id);
     const deletepost = await pool.query(    
     "DELETE FROM posts WHERE id = $1", [id]
     );
-    res.redirect('posts');
+    res.redirect('/');
     } catch (err) {
     console.error(err.message);
     }
