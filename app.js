@@ -40,7 +40,7 @@ app.get('/', async(req, res) => {
     try { 
         console.log("get posts request has arrived"); 
         const posts = await pool.query( 
-            "SELECT * FROM posts" 
+            "SELECT * FROM posts ORDER BY id ASC" 
         ); 
         res.render('posts', { posts: posts.rows });
     } catch (err) { 
