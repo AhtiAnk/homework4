@@ -9,14 +9,20 @@
 </head>
 <body>
 <div class="vertical">  
-    <div class="create-post"> 
-        <form action="/addnewpost" method="POST"> 
+    <div class= "container" >
+        <div class="create-post"> 
+            <div class="pilt">
+                <img src="/logo.png" alt="postIt">
+            </div>
+            <form action="/addnewpost" method="POST"> 
             <label for="comment">Comment:</label> 
             <input type="text" id="comment" name="comment" required><br><br> 
             <button>Submit</button> 
         </form> 
+    
     </div>
     <%- include('./partials/footer.ejs') %>
+</div>
 </div>
 
 </body>
